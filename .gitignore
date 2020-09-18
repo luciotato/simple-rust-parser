@@ -1,0 +1,28 @@
+*.sublime-workspace
+.SyncID
+.SyncIgnore
+.directory
+.vscode
+.vs
+/bin
+/dist
+/obj
+node_modules
+
+# This project
+old/
+out/
+debug.log
+*.o
+doc/generated/
+
+generated/
+
+build/
+dist/
+
+*.map
+
+# npm stuff
+node_modules/
+npm-debug.log

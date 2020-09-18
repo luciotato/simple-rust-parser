@@ -1,0 +1,38 @@
+{
+    "name": "rs2as",
+    "version": "0.1.0",
+    "description": "simple PEG parser for a subset of rust compiling to WASM for the NEAR NV",
+    "main": "dist/index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "build": "tsc --build",
+        "clean": "tsc --build --clean",
+        "test": "tests/index.js",
+        "lint": "eslint . --ext .ts"
+    },
+    "devDependencies": {
+        "@types/mocha": "^8.0.3",
+        "@types/node": "^8.10.62",
+        "typescript": "^3.2.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/luciotato/rs2as.git"
+    },
+    "keywords": [
+        "NEAR",
+        "AssemblyScript",
+        "rust",
+        "smart",
+        "contracts",
+        "transpiler"
+    ],
+    "author": "Lucio Tato",
+    "license": "ISC",
+    "homepage": "https://github.com/luciotato/rs2as#readme",
+    "bugs": {
+        "url": "https://github.com/luciotato/rs2as/issues"
+    }
+}
