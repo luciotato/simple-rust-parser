@@ -1,8 +1,6 @@
-import assert = require('assert');
-
 import { TokenCode, Lexer } from "../src/Lexer/Lexer"
 
-describe("Tokenizer", function () {
+/*describe("Tokenizer", function () {
     it("should parse a declaration", function () {
         let lexer = new Lexer()
 
@@ -32,3 +30,4 @@ describe("Tokenizer", function () {
             ])
     })
 })
+*/

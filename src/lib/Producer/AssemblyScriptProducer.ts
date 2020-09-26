@@ -69,7 +69,7 @@ Grammar.ASTModule.prototype.produce = ASTModuleWriter.prototype.produce
 Grammar.UseDeclaration.prototype.produce = function () {
     if (!this.owner.codeWriter.importDone) {
         this.owner.codeWriter.importDone = true
-        this.owner.codeWriter.writeLine('import { Context, logging, storage } from "near-sdk-as"')
+        this.owner.codeWriter.writeLine('import { Context, logging, storage } from "near-sdk-as".js')
     }
 }
 
@@ -448,7 +448,7 @@ export class AssemblyScriptProducer {
     static produce(root: ASTBase, outFilename: string) {
 
         const parser: Parser = root.owner
-        parser.codeWriter = new ASCodeWriter(outFilename)
+        parser.codeWriter = new ASCodeWriter(outFilename, {})
 
         console.log(Path.join(process.cwd(), outFilename))
 

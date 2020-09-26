@@ -4,11 +4,11 @@
 
 //--eslint no-constant-condition: ["error", { "checkLoops": false }]*/
 
-import "../util/String.extensions"
+import "../util/String.extensions.js"
 
-import { logger } from '../util/logger'
+import { logger } from '../util/logger.js'
 
-import { UTF8FileReader } from "../util/UTF8FileReader"
+import { UTF8FileReader } from "../util/UTF8FileReader.js"
 
 export enum TokenCode {
     BOF = 0,
@@ -457,7 +457,7 @@ export class Lexer {
     private consumeStringFromRead(endPos: number): string {
         const result = this.readString.slice(0, endPos)
         this.readString = this.readString.slice(endPos)
-        if (this.readString.length < 8 * 1024 && this.file.isOpen) {
+        if (this.readString.length < 8 * 1024 && this.file && this.file.isOpen) {
             this.readString += this.file.readChunk()
         }
         return result

@@ -1,4 +1,4 @@
-import assert = require('assert');
+/*import assert = require('assert');
 
 describe("Test Suite 1", () => {
     it("Test A", () => {
@@ -10,3 +10,4 @@ describe("Test Suite 1", () => {
         assert.ok(false, "This should fail")
     })
 })
+*/

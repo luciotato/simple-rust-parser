@@ -1,5 +1,5 @@
-import { color } from './color'
-import { ControlledError } from './ControlledError'
+import { color } from './color.js'
+import { ControlledError } from './ControlledError.js'
 
 //Main namespace
 /*eslint no-inner-declarations: "off"*/

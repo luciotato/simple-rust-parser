@@ -22,10 +22,12 @@ export class CodeWriter {
     lines
     browser: boolean
     exportNamespace: boolean
+    public data: any
     
     // ---------------------------
-    constructor(fn1: string, fn2: string = '', fn3: string = '') {
+    constructor(fn1: string, data: any, fn2: string = '', fn3: string = '') {
         this.filenames = [fn1, fn2, fn3]
+        this.data = data
         //Initialize output array
         this.lineNum = 1
         this.column = 1
@@ -99,9 +101,20 @@ export class CodeWriter {
 
         }
 
+        this.clearCurrentLine()
+    }
+
+    //----------------------------
+    // clear current working line
+    clearCurrentLine() {
         //clear current line
         this.currLine = []
         this.column = 1
+    }
+    //----------------------------
+    // return current working line
+    getCurrentLine() {
+        return this.currLine.join("")
     }
 
     // ---------------------------

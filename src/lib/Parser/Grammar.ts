@@ -329,7 +329,7 @@ export class NumberLiteral extends ASTBase {
     parse() {
         this.tokenCode = this.owner.lexer.token.tokenCode
         this.name = this.reqList([TokenCode.NUMBER, TokenCode.HEXANUMBER, TokenCode.BINARYNUMBER]) as string
-        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
     }
 }
 // end class NumberLiteral
@@ -343,7 +343,7 @@ export class StringLiteral extends ASTBase {
     // ---------------------------
     parse() {
         this.name = this.reqToken(TokenCode.LITERAL_STRING)
-        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
     }
     // ---------------------------
     unquoted(): string {
@@ -359,7 +359,7 @@ export class RegExpLiteral extends ASTBase {
     // ---------------------------
     parse() {
         this.name = this.reqToken(TokenCode.LITERAL_STRING)
-        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
     }
 }
 // end class RegExpLiteral
@@ -683,7 +683,7 @@ export class ObjectLiteral extends ASTBase {
         this.lock()
         this.children = this.optSeparatedList(NameValuePair, ',', '}')
 
-        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
     }
 
     // ---------------------------
@@ -771,7 +771,7 @@ export class ParenExpression extends ASTBase {
         this.reqChild(Expression)
         this.req(')')
 
-        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
     }
 }
 // end class ParenExpression
@@ -1010,7 +1010,7 @@ export class MatchExpression extends ASTBase {
         this.req('{')
         this.children = this.optSeparatedList(MatchPair, ",", "}")
 
-        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(this) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
     }
 }
 // end class MatchExpression
@@ -2103,7 +2103,7 @@ export class CompilerStatement extends ASTBase {
 
 //Example: `import fs, path` ->  js:`var fs=require('fs'),path=require('path')`
 
-//Example: `import Args, wait from 'wait.for'` ->  js:`var http=require('./Args'),wait=require('./wait.for')`
+//Example: `import Args, wait from 'wait.for'` ->  js:`var http=require('./Args'),wait=require('./wait.for.js')`
 
 //public class ImportStatement extends ASTBase
 // constructor
@@ -2756,7 +2756,7 @@ export class Statement {
 
         resultASTNode.keyword = key
         resultASTNode.isPublic = isPublic
-        Expression.checkNativeRustConversionMapCollect(resultASTNode) //veo si tiene una llamada a .to_vec() u otra conversión
+        Expression.checkNativeRustConversionMapCollect(resultASTNode) //veo si tiene una llamada a .to_vec() u otra conversiï¿½n
 
         return resultASTNode
 

@@ -2,27 +2,14 @@
 .SyncID
 .SyncIgnore
 .directory
-.vscode
-.vs
-/bin
-/dist
-/obj
+bin
+dist
+obj
 node_modules
 
 # This project
-old/
-out/
+out
 debug.log
-*.o
-doc/generated/
-
-generated/
-
-build/
-dist/
-
-*.map
 
 # npm stuff
-node_modules/
 npm-debug.log

@@ -2,7 +2,7 @@
 // UTF8FileReader
 //--------------------
 import * as fs from 'fs';
-import { StringDecoder, NodeStringDecoder } from "string_decoder";
+import { StringDecoder} from "string_decoder";
 
 export class UTF8FileReader {
 
@@ -13,7 +13,7 @@ export class UTF8FileReader {
     private readFilePos: number;
     private readBuffer: Buffer;
 
-    private utf8decoder: NodeStringDecoder
+    private utf8decoder: StringDecoder
 
     /**
      * open the file | throw
